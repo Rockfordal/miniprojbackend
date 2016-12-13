@@ -196,6 +196,8 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Classes\HighscoreEntry.cs" />
+    <Compile Include="Classes\HighscoreList.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -205,7 +207,9 @@
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ColorTestModel.cs" />
+    <Compile Include="Models\HighscoreListModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\TestCategoryModel.cs" />
     <Compile Include="Models\TextTestModel.cs" />
     <Compile Include="Models\SeparatorTestModel.cs" />
     <Compile Include="Models\WordImageTestModel.cs" />
