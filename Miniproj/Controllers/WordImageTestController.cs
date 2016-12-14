@@ -23,25 +23,23 @@ namespace Miniproj.Controllers
         }
 
         // GET: api/WordImageTest
-        /*
-        public IQueryable<WordImageTestModel> GetWordImageTestModels()
-        {
-            return db.WordImageTestModels;
-        }
-        */
+        //public IQueryable<WordImageTestModel> GetWordImageTestModels()
+        //{
+        //    return db.WordImageTestModels;
+        //}
 
         // GET: api/WordImageTest/5
-        [ResponseType(typeof(WordImageTestModel))]
-        public IEnumerable<string> Get()
+        //[ResponseType(typeof(WordImageTestModel))]
+        public ICollection<WordImageQuestion> Get()
         {
-            var testData = repo.GetWordImageTestData();
-            if (testData == null)
-            {
+            List<WordImageQuestion> wordimages = repo.GetWordImageTestData().ToList();
+            //if (testData == null)
+            //{
                 //return NotFound();
-            }
+            //}
 
-            return new string[] {"hej", "hej"};
-            //return testData;
+            //return new string[] { "hej", "hej" };
+            return wordimages;
         }
 
         // PUT: api/WordImageTest/5
