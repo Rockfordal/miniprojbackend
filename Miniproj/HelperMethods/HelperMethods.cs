@@ -6,19 +6,19 @@ using System.Web;
 
 namespace Miniproj
 {
-    public class HelperMethods
+    public static class ThreadSafeRandom
     {
-        public static class ThreadSafeRandom
+        [ThreadStatic]
+        private static Random Local;
+
+        public static Random ThisThreadsRandom
         {
-            [ThreadStatic]
-            private static Random Local;
-
-            public static Random ThisThreadsRandom
-            {
-                get { return Local ?? (Local = new Random(unchecked(Environment.TickCount * 31 + Thread.CurrentThread.ManagedThreadId))); }
-            }
+            get { return Local ?? (Local = new Random(unchecked(Environment.TickCount * 31 + Thread.CurrentThread.ManagedThreadId))); }
         }
+    }
 
+    public static class HelperMethods
+    {
         public static T GetRandom<T>(this IEnumerable<T> source)
         {
             return source.ElementAt(ThreadSafeRandom.ThisThreadsRandom.Next(source.Count()));

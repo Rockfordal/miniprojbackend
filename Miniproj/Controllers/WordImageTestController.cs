@@ -13,9 +13,14 @@ using Miniproj.Repositories;
 
 namespace Miniproj.Controllers
 {
-    public class MasterTestController : ApiController
+    public class WordImageTestController : ApiController
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        public SuperRepository repo { get; set; }
+
+        public WordImageTestController()
+        {
+            repo = new SuperRepository();
+        }
 
         // GET: api/WordImageTest
         /*
@@ -27,15 +32,16 @@ namespace Miniproj.Controllers
 
         // GET: api/WordImageTest/5
         [ResponseType(typeof(WordImageTestModel))]
-        public IHttpActionResult GetRandomWordImageTest()
+        public IEnumerable<string> Get()
         {
-            Tuple<int, string> testData = WordImageTestRepository.GetWordImageTestData(db.WordImageTestModels);
+            var testData = repo.GetWordImageTestData();
             if (testData == null)
             {
-                return NotFound();
+                //return NotFound();
             }
 
-            return Ok(testData);
+            return new string[] {"hej", "hej"};
+            //return testData;
         }
 
         // PUT: api/WordImageTest/5
@@ -109,19 +115,5 @@ namespace Miniproj.Controllers
             return Ok(wordImageTestModel);
         }
         */
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
-        private bool WordImageTestModelExists(int id)
-        {
-            return db.WordImageTestModels.Count(e => e.Id == id) > 0;
-        }
     }
 }

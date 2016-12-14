@@ -209,11 +209,13 @@
     <Compile Include="Classes\HighscoreList.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\WordImageTestController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HelperMethods\HelperMethods.cs" />
     <Compile Include="Migrations\201612141034290_Initial models.cs" />
     <Compile Include="Migrations\201612141034290_Initial models.Designer.cs">
       <DependentUpon>201612141034290_Initial models.cs</DependentUpon>
@@ -238,6 +240,7 @@
     <Compile Include="Models\WordImageTestModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Repositories\SuperRepository.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
