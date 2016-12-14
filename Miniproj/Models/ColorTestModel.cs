@@ -13,6 +13,7 @@ namespace Miniproj.Models
 
         [Required]
         public string Color { get; set; }
+
         [Required]
         public string Image { get; set; }
     }

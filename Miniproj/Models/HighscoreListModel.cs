@@ -14,6 +14,7 @@ namespace Miniproj.Models
 
         [Required]
         public int Category { get; set; }
+
         [Required]
         public HighscoreList Highscores { get; set; }
     }
