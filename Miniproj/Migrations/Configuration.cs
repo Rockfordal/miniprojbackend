@@ -17,6 +17,15 @@ namespace Miniproj.Migrations
 
         protected override void Seed(Miniproj.Models.ApplicationDbContext c)
         {
+            c.Separatortests.AddOrUpdate(
+                new SeparatorTestModel { Text = "Ni kommer aldrig att lyckas - fyrmanna-band är ute. Åk hem till Liverpool..." },
+                new SeparatorTestModel { Text = "Kom alltid ihåg att du är helt unik. Precis som alla andra." },
+                new SeparatorTestModel { Text = "På hösten flyger fåglarna till månen där de sover vintersömn, tills de återvänder till jorden på våren." },
+                new SeparatorTestModel { Text = "Huvudvärk beror på inflammation i huvudet, och den kureras bäst med varma omslag, gärna bestående av elefantexkrementer." },
+                new SeparatorTestModel { Text = "Jag är inte vegetarian för att jag älskar djur. Jag är vegetarian för att jag hatar växter." },
+                new SeparatorTestModel { Text = "Den bästa hämnden när någon stjäl din fru? Att låta honom behålla henne." }
+            );
+
             c.WordImagetests.AddOrUpdate(
                 new WordImageTestModel { Image = "/content/images/bird.png",  Word = "Fågel" },
                 new WordImageTestModel { Image = "/content/images/car.png",   Word = "Bil" },
