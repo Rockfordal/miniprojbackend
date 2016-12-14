@@ -1,1 +1,2 @@
-﻿delete from colortestmodels;
+﻿delete from ColorTestModels;
+delete from WordImageTestModels;
