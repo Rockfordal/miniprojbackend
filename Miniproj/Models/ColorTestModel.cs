@@ -12,8 +12,9 @@ namespace Miniproj.Models
         public int Id { get; set; }
 
         [Required]
-        public string Color { get; set; }
+        public string RGB { get; set; }
+
         [Required]
-        public string Image { get; set; }
+        public string Name { get; set; }
     }
 }
