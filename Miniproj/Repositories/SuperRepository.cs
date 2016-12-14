@@ -23,12 +23,24 @@ namespace Miniproj.Repositories
             return data;
         }
 
-        /*
-        public static Tuple<int, string> GetRandomWordImageTestData()
+        /* public static Tuple<int, string> GetRandomWordImageTestData()
         {
             var obj = HelperMethods.GetRandom(context.WordImageTestModels);
             return new Tuple<int, string>(obj.Id, obj.Image);
+        } */
+
+        public SeparatorTestModel GetSeparatorTestData()
+        {
+            Random rand = new Random();
+            var count = context.Separatortests.Count();
+            int toSkip = rand.Next(0, count);
+            var data = context.Separatortests
+                .OrderBy(a => a.Id)
+                .Skip(toSkip)
+                .Take(1)
+                .First();
+            return data;
         }
-        */
+
     }
 }
