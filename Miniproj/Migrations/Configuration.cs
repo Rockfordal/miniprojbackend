@@ -17,6 +17,14 @@ namespace Miniproj.Migrations
 
         protected override void Seed(Miniproj.Models.ApplicationDbContext c)
         {
+            c.WordImagetests.AddOrUpdate(
+                new WordImageTestModel { Image = "/content/images/bird.png",  Word = "Fågel" },
+                new WordImageTestModel { Image = "/content/images/car.png",   Word = "Bil" },
+                new WordImageTestModel { Image = "/content/images/cat.png",   Word = "Katt" },
+                new WordImageTestModel { Image = "/content/images/dog.png",   Word = "Hund" },
+                new WordImageTestModel { Image = "/content/images/house.png", Word = "Hus" }
+            );
+
             c.Colortests.AddOrUpdate(
                 //new ColorTestModel { RGB = "", Name = "" },
                 //new ColorTestModel { RGB = "", Name = "" },
