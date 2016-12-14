@@ -26,8 +26,6 @@ namespace Miniproj.Migrations
             );
 
             c.Colortests.AddOrUpdate(
-                //new ColorTestModel { RGB = "", Name = "" },
-                //new ColorTestModel { RGB = "", Name = "" },
                 new ColorTestModel { Name = "Vit", RGB = "#FFFFFF" },
                 new ColorTestModel { Name = "Svart", RGB = "#000000" },
                 new ColorTestModel { Name = "Blå", RGB = "#0000FF"},
