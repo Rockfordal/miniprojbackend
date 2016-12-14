@@ -222,6 +222,10 @@
     <Compile Include="Migrations\201612141043161_tests.Designer.cs">
       <DependentUpon>201612141043161_tests.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612141052186_colortest_RGB.cs" />
+    <Compile Include="Migrations\201612141052186_colortest_RGB.Designer.cs">
+      <DependentUpon>201612141052186_colortest_RGB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -235,7 +239,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
-    <Compile Include="Seed.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -310,6 +313,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612141043161_tests.resx">
       <DependentUpon>201612141043161_tests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612141052186_colortest_RGB.resx">
+      <DependentUpon>201612141052186_colortest_RGB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
