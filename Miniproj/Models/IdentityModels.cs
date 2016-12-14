@@ -29,5 +29,7 @@ namespace Miniproj.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Miniproj.Models.WordImageTestModel> WordImageTestModels { get; set; }
     }
 }
