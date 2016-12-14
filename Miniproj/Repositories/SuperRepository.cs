@@ -15,9 +15,12 @@ namespace Miniproj.Repositories
             context = new ApplicationDbContext();
         }
 
-        public ICollection<Tuple<int, string>> GetWordImageTestData()
+        public IEnumerable<WordImageQuestion> GetWordImageTestData()
         {
-            return context.WordImageTestModels.Select(x => new Tuple<int, string>(x.Id, x.Image)).Take(5).ToList();
+            var data = context.WordImagetests
+                .Select(x => new WordImageQuestion { Id = x.Id, Image = x.Image })
+                .Take(5);
+            return data;
         }
 
         /*

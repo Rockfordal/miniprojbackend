@@ -17,4 +17,17 @@ namespace Miniproj.Models
         [Required]
         public string Image { get; set; }
     }
+
+    public class WordImageQuestion
+    {
+        public int Id { get; set; }
+        public string Image { get; set; }
+    }
+
+    public class WordImageAnswer
+    {
+        public int Id { get; set; }
+        public string Word { get; set; }
+    }
+
 }
