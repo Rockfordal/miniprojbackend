@@ -25,7 +25,9 @@ namespace Miniproj.Controllers
         {
             SentenceTest text = repo.GetRandomSentenceTestData();
 
-            return Ok(text);
+            string output = string.Join(" ", repo.ShuffleText(text.Text));
+
+            return Ok(output);
         }
     }
 }

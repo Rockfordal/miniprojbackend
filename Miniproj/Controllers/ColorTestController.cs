@@ -12,7 +12,7 @@ namespace Miniproj.Controllers
         // GET api/colortest
         public IEnumerable<string> Get()
         {
-            return new string[] { "hej", "hoj" };
+            return new string[] { "ColorTest", "hoj" };
         }
     }
 }

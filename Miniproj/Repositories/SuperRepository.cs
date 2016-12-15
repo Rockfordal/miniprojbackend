@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 
 namespace Miniproj.Repositories
@@ -15,11 +16,11 @@ namespace Miniproj.Repositories
             context = new ApplicationDbContext();
         }
 
-        public IEnumerable<WordImageQuestion> GetWordImageTestData()
+        public IEnumerable<WordImageQuestion> GetWordImageTestData(int limit = 5)
         {
             var data = context.WordImagetests
                 .Select(x => new WordImageQuestion { Id = x.Id, Image = x.Image })
-                .Take(5);
+                .Take(limit);
             return data;
         }
 
@@ -77,5 +78,21 @@ namespace Miniproj.Repositories
             return results;
         }
 
+        public string HideSeparators(string input, string replacement = "*")
+        {
+            Regex test = new Regex("[" + HelperClasses.Separators +"]");
+            return test.Replace(input, replacement);
+        }
+
+        public string[] ShuffleText(string text)
+        {
+            string[] temp = text.Split(' ');
+
+            temp.Shuffle();
+
+            //text = string.Join(" ", temp);
+
+            return temp;
+        }
     }
 }

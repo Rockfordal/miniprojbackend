@@ -209,6 +209,7 @@
     <Compile Include="Classes\HighscoreList.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RandomTestController.cs" />
     <Compile Include="Controllers\SentenceTestController.cs" />
     <Compile Include="Controllers\SeparatorTestController.cs" />
     <Compile Include="Controllers\WordImageTestController.cs" />
@@ -217,7 +218,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="HelperMethods\HelperMethods.cs" />
+    <Compile Include="Classes\HelperClasses.cs" />
     <Compile Include="Migrations\201612141034290_Initial models.cs" />
     <Compile Include="Migrations\201612141034290_Initial models.Designer.cs">
       <DependentUpon>201612141034290_Initial models.cs</DependentUpon>

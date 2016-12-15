@@ -25,8 +25,9 @@ namespace Miniproj.Controllers
         {
             SeparatorTest text = repo.GetRandomSeparatorTestData();
 
+            text.Text = repo.HideSeparators(text.Text);
+
             return Ok(text);
         }
-
     }
 }
