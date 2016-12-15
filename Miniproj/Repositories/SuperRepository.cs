@@ -16,11 +16,11 @@ namespace Miniproj.Repositories
             context = new ApplicationDbContext();
         }
 
-        public IEnumerable<WordImageQuestion> GetWordImageTestData()
+        public IEnumerable<WordImageQuestion> GetWordImageTestData(int limit = 5)
         {
             var data = context.WordImagetests
                 .Select(x => new WordImageQuestion { Id = x.Id, Image = x.Image })
-                .Take(5);
+                .Take(limit);
             return data;
         }
 
@@ -35,16 +35,11 @@ namespace Miniproj.Repositories
             Random rand = new Random();
             var count = context.Separatortests.Count();
             int toSkip = rand.Next(0, count);
-            /*
             var data = context.Separatortests
                 .OrderBy(a => a.Id)
                 .Skip(toSkip)
                 .Take(1)
                 .First();
-            */
-            var data = context.Separatortests
-                .OrderBy(a => a.Id)
-                .ElementAt(toSkip);
             return data;
         }
 
@@ -53,16 +48,11 @@ namespace Miniproj.Repositories
             Random rand = new Random();
             var count = context.Sentencetests.Count();
             int toSkip = rand.Next(0, count);
-            /*
             var data = context.Sentencetests
                 .OrderBy(a => a.Id)
                 .Skip(toSkip)
                 .Take(1)
                 .First();
-            */
-            var data = context.Sentencetests
-                .OrderBy(a => a.Id)
-                .ElementAt(toSkip);
             return data;
         }
 
@@ -70,6 +60,17 @@ namespace Miniproj.Repositories
         {
             Regex test = new Regex("[" + HelperClasses.SeparatorList +"]");
             return test.Replace(input, replacement);
+        }
+
+        public string[] ScrambleText(string text)
+        {
+            string[] temp = text.Split(' ');
+
+            temp.Shuffle();
+
+            //text = string.Join(" ", temp);
+
+            return temp;
         }
     }
 }

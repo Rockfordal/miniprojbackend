@@ -19,7 +19,8 @@ namespace Miniproj
 
     public static class HelperClasses
     {
-        public const string SeparatorList = ",.:;";
+        // Alla skiljetecken som räknas i SeparatorTest
+        public const string SeparatorList = ",.:;-";
 
         public static T GetRandom<T>(this IEnumerable<T> source)
         {
