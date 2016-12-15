@@ -17,6 +17,15 @@ namespace Miniproj.Migrations
 
         protected override void Seed(Miniproj.Models.ApplicationDbContext c)
         {
+            c.Sentencetests.AddOrUpdate(
+                new SentenceTest { Text = "Thank you for the mess." },
+                new SentenceTest { Text = "Så ljuvt det är att göra ingenting, och sedan vila efteråt." },
+                new SentenceTest { Text = "Arbete är en aktivitet som är till för tråkmånsar." },
+                new SentenceTest { Text = "Det är bättre att vara omsorgsfullt overksam än att arbeta slarvigt." },
+                new SentenceTest { Text = "Jag äger tio par gymnastikskor, ett par för varje veckodag." },
+                new SentenceTest { Text = "gymnastikskor, ett par för varje veckodag." }
+            );
+
             c.Separatortests.AddOrUpdate(
                 new SeparatorTest { Text = "Ni kommer aldrig att lyckas - fyrmanna-band är ute. Åk hem till Liverpool..." },
                 new SeparatorTest { Text = "Kom alltid ihåg att du är helt unik. Precis som alla andra." },
