@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 
 namespace Miniproj.Repositories
@@ -34,11 +35,16 @@ namespace Miniproj.Repositories
             Random rand = new Random();
             var count = context.Separatortests.Count();
             int toSkip = rand.Next(0, count);
+            /*
             var data = context.Separatortests
                 .OrderBy(a => a.Id)
                 .Skip(toSkip)
                 .Take(1)
                 .First();
+            */
+            var data = context.Separatortests
+                .OrderBy(a => a.Id)
+                .ElementAt(toSkip);
             return data;
         }
 
@@ -47,12 +53,23 @@ namespace Miniproj.Repositories
             Random rand = new Random();
             var count = context.Sentencetests.Count();
             int toSkip = rand.Next(0, count);
+            /*
             var data = context.Sentencetests
                 .OrderBy(a => a.Id)
                 .Skip(toSkip)
                 .Take(1)
                 .First();
+            */
+            var data = context.Sentencetests
+                .OrderBy(a => a.Id)
+                .ElementAt(toSkip);
             return data;
+        }
+
+        public string HideSeparators(string input, string replacement = "*")
+        {
+            Regex test = new Regex("[" + HelperClasses.SeparatorList +"]");
+            return test.Replace(input, replacement);
         }
     }
 }

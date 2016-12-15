@@ -17,8 +17,10 @@ namespace Miniproj
         }
     }
 
-    public static class HelperMethods
+    public static class HelperClasses
     {
+        public const string SeparatorList = ",.:;";
+
         public static T GetRandom<T>(this IEnumerable<T> source)
         {
             return source.ElementAt(ThreadSafeRandom.ThisThreadsRandom.Next(source.Count()));
