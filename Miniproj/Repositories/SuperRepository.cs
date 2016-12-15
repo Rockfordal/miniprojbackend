@@ -42,5 +42,17 @@ namespace Miniproj.Repositories
             return data;
         }
 
+        public SentenceTest GetRandomSentenceTestData()
+        {
+            Random rand = new Random();
+            var count = context.Sentencetests.Count();
+            int toSkip = rand.Next(0, count);
+            var data = context.Sentencetests
+                .OrderBy(a => a.Id)
+                .Skip(toSkip)
+                .Take(1)
+                .First();
+            return data;
+        }
     }
 }

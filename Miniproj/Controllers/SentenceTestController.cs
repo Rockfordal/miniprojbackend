@@ -10,23 +10,22 @@ using System.Web.Http.Description;
 
 namespace Miniproj.Controllers
 {
-    public class SeparatorTestController : ApiController
+    public class SentenceTestController : ApiController
     {
         public SuperRepository repo { get; set; }
 
-        public SeparatorTestController()
+        public SentenceTestController ()
         {
             repo = new SuperRepository();
         }
 
         // GET: /api/separatortest/
-        [ResponseType(typeof(SeparatorTest))]
+        [ResponseType(typeof(SentenceTest))]
         public IHttpActionResult Get()
         {
-            SeparatorTest text = repo.GetRandomSeparatorTestData();
+            SentenceTest text = repo.GetRandomSentenceTestData();
 
             return Ok(text);
         }
-
     }
 }
