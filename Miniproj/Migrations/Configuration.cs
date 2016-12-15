@@ -18,54 +18,54 @@ namespace Miniproj.Migrations
         protected override void Seed(Miniproj.Models.ApplicationDbContext c)
         {
             c.Separatortests.AddOrUpdate(
-                new SeparatorTestModel { Text = "Ni kommer aldrig att lyckas - fyrmanna-band är ute. Åk hem till Liverpool..." },
-                new SeparatorTestModel { Text = "Kom alltid ihåg att du är helt unik. Precis som alla andra." },
-                new SeparatorTestModel { Text = "På hösten flyger fåglarna till månen där de sover vintersömn, tills de återvänder till jorden på våren." },
-                new SeparatorTestModel { Text = "Huvudvärk beror på inflammation i huvudet, och den kureras bäst med varma omslag, gärna bestående av elefantexkrementer." },
-                new SeparatorTestModel { Text = "Jag är inte vegetarian för att jag älskar djur. Jag är vegetarian för att jag hatar växter." },
-                new SeparatorTestModel { Text = "Den bästa hämnden när någon stjäl din fru? Att låta honom behålla henne." }
+                new SeparatorTest { Text = "Ni kommer aldrig att lyckas - fyrmanna-band är ute. Åk hem till Liverpool..." },
+                new SeparatorTest { Text = "Kom alltid ihåg att du är helt unik. Precis som alla andra." },
+                new SeparatorTest { Text = "På hösten flyger fåglarna till månen där de sover vintersömn, tills de återvänder till jorden på våren." },
+                new SeparatorTest { Text = "Huvudvärk beror på inflammation i huvudet, och den kureras bäst med varma omslag, gärna bestående av elefantexkrementer." },
+                new SeparatorTest { Text = "Jag är inte vegetarian för att jag älskar djur. Jag är vegetarian för att jag hatar växter." },
+                new SeparatorTest { Text = "Den bästa hämnden när någon stjäl din fru? Att låta honom behålla henne." }
             );
 
             c.WordImagetests.AddOrUpdate(
-                new WordImageTestModel { Image = "/content/images/bird.png",  Word = "Fågel" },
-                new WordImageTestModel { Image = "/content/images/car.png",   Word = "Bil" },
-                new WordImageTestModel { Image = "/content/images/cat.png",   Word = "Katt" },
-                new WordImageTestModel { Image = "/content/images/dog.jpg",   Word = "Hund" },
-                new WordImageTestModel { Image = "/content/images/house.png", Word = "Hus" }
+                new WordImageTest { Image = "/content/images/bird.png", Word = "Fågel" },
+                new WordImageTest { Image = "/content/images/car.png", Word = "Bil" },
+                new WordImageTest { Image = "/content/images/cat.png", Word = "Katt" },
+                new WordImageTest { Image = "/content/images/dog.jpg", Word = "Hund" },
+                new WordImageTest { Image = "/content/images/house.png", Word = "Hus" }
             );
 
             c.Colortests.AddOrUpdate(
-                new ColorTestModel { Name = "Vit", RGB = "#FFFFFF" },
-                new ColorTestModel { Name = "Svart", RGB = "#000000" },
-                new ColorTestModel { Name = "Blå", RGB = "#0000FF"},
-                new ColorTestModel { Name = "Grå", RGB = "#808080" },
-                new ColorTestModel { Name = "Silver", RGB = "#C0C0C0" },
-                new ColorTestModel { Name = "Lavendel", RGB = "E6E6FA" },
-                new ColorTestModel { Name = "Ultramarin", RGB = "#120A8F" },
-                new ColorTestModel { Name = "Indigo", RGB = "#4B0082" },
-                new ColorTestModel { Name = "Cyan", RGB = "#00FFFF" },
-                new ColorTestModel { Name = "Turkos", RGB = "#40E0D0" },
-                new ColorTestModel { Name = "Akvamarin", RGB = "#7FFFD4" },
-                new ColorTestModel { Name = "Smaragdgrön", RGB = "#50C878" },
-                new ColorTestModel { Name = "Grön", RGB = "#008000" },
-                new ColorTestModel { Name = "Lime", RGB = "#BFFF00" },
-                new ColorTestModel { Name = "Beige", RGB = "#F5F5DC" },
-                new ColorTestModel { Name = "Gul", RGB = "#FFFF00" },
-                new ColorTestModel { Name = "Olivgrön", RGB = "#808000" },
-                new ColorTestModel { Name = "Guld", RGB = "#FFD700" },
-                new ColorTestModel { Name = "Orange", RGB = "#FFA500" },
-                new ColorTestModel { Name = "Brun", RGB = "#964B00" },
-                new ColorTestModel { Name = "Rost", RGB = "#B7410E" },
-                new ColorTestModel { Name = "Rosa", RGB = "#FFC0CB" },
-                new ColorTestModel { Name = "Korall", RGB = "#F88379" },
-                new ColorTestModel { Name = "Scharlakansröd ", RGB = "#FF2400" },
-                new ColorTestModel { Name = "Röd", RGB = "#FF0000" },
-                new ColorTestModel { Name = "Kastanj", RGB = "#CD5C5C" },
-                new ColorTestModel { Name = "Vinröd", RGB = "#800000" },
-                new ColorTestModel { Name = "Cerise", RGB = "#DE3163" },
-                new ColorTestModel { Name = "Lila", RGB = "#C8A2C8" },
-                new ColorTestModel { Name = "Violett", RGB = "#EE82EE" },
-                new ColorTestModel { Name = "Purpur", RGB = "#800080" }
+                new ColorTest { Name = "Vit", RGB = "#FFFFFF" },
+                new ColorTest { Name = "Svart", RGB = "#000000" },
+                new ColorTest { Name = "Blå", RGB = "#0000FF" },
+                new ColorTest { Name = "Grå", RGB = "#808080" },
+                new ColorTest { Name = "Silver", RGB = "#C0C0C0" },
+                new ColorTest { Name = "Lavendel", RGB = "E6E6FA" },
+                new ColorTest { Name = "Ultramarin", RGB = "#120A8F" },
+                new ColorTest { Name = "Indigo", RGB = "#4B0082" },
+                new ColorTest { Name = "Cyan", RGB = "#00FFFF" },
+                new ColorTest { Name = "Turkos", RGB = "#40E0D0" },
+                new ColorTest { Name = "Akvamarin", RGB = "#7FFFD4" },
+                new ColorTest { Name = "Smaragdgrön", RGB = "#50C878" },
+                new ColorTest { Name = "Grön", RGB = "#008000" },
+                new ColorTest { Name = "Lime", RGB = "#BFFF00" },
+                new ColorTest { Name = "Beige", RGB = "#F5F5DC" },
+                new ColorTest { Name = "Gul", RGB = "#FFFF00" },
+                new ColorTest { Name = "Olivgrön", RGB = "#808000" },
+                new ColorTest { Name = "Guld", RGB = "#FFD700" },
+                new ColorTest { Name = "Orange", RGB = "#FFA500" },
+                new ColorTest { Name = "Brun", RGB = "#964B00" },
+                new ColorTest { Name = "Rost", RGB = "#B7410E" },
+                new ColorTest { Name = "Rosa", RGB = "#FFC0CB" },
+                new ColorTest { Name = "Korall", RGB = "#F88379" },
+                new ColorTest { Name = "Scharlakansröd ", RGB = "#FF2400" },
+                new ColorTest { Name = "Röd", RGB = "#FF0000" },
+                new ColorTest { Name = "Kastanj", RGB = "#CD5C5C" },
+                new ColorTest { Name = "Vinröd", RGB = "#800000" },
+                new ColorTest { Name = "Cerise", RGB = "#DE3163" },
+                new ColorTest { Name = "Lila", RGB = "#C8A2C8" },
+                new ColorTest { Name = "Violett", RGB = "#EE82EE" },
+                new ColorTest { Name = "Purpur", RGB = "#800080" }
                 );
         }
     }

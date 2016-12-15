@@ -6,15 +6,12 @@ using System.Web;
 
 namespace Miniproj.Models
 {
-    public class ColorTestModel
+    public class SentenceTest
     {
         [Key]
         public int Id { get; set; }
 
-        [Required]
-        public string RGB { get; set; }
-
-        [Required]
-        public string Name { get; set; }
+        [Required, MinLength(3)]
+        public string Text { get; set; }
     }
 }

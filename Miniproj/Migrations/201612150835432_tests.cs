@@ -8,26 +8,17 @@ namespace Miniproj.Migrations
         public override void Up()
         {
             CreateTable(
-                "dbo.ColorTestModels",
+                "dbo.ColorTests",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Color = c.String(nullable: false),
-                        Image = c.String(nullable: false),
+                        RGB = c.String(nullable: false),
+                        Name = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.SeparatorTestModels",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Text = c.String(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id);
-            
-            CreateTable(
-                "dbo.TextTestModels",
+                "dbo.SentenceTests",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -36,7 +27,16 @@ namespace Miniproj.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.WordImageTestModels",
+                "dbo.SeparatorTests",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Text = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.WordImageTests",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -49,10 +49,10 @@ namespace Miniproj.Migrations
         
         public override void Down()
         {
-            DropTable("dbo.WordImageTestModels");
-            DropTable("dbo.TextTestModels");
-            DropTable("dbo.SeparatorTestModels");
-            DropTable("dbo.ColorTestModels");
+            DropTable("dbo.WordImageTests");
+            DropTable("dbo.SeparatorTests");
+            DropTable("dbo.SentenceTests");
+            DropTable("dbo.ColorTests");
         }
     }
 }

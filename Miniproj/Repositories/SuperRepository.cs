@@ -29,7 +29,7 @@ namespace Miniproj.Repositories
             return new Tuple<int, string>(obj.Id, obj.Image);
         } */
 
-        public SeparatorTestModel GetSeparatorTestData()
+        public SeparatorTest GetRandomSeparatorTestData()
         {
             Random rand = new Random();
             var count = context.Separatortests.Count();

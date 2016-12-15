@@ -13,7 +13,7 @@ namespace Miniproj.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201612141043161_tests"; }
+            get { return "201612150835432_tests"; }
         }
         
         string IMigrationMetadata.Source

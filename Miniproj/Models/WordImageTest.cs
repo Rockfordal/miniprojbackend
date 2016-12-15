@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Miniproj.Models
 {
-    public class WordImageTestModel
+    public class WordImageTest
     {
         [Key]
         public int Id { get; set; }

@@ -6,12 +6,12 @@ using System.Web;
 
 namespace Miniproj.Models
 {
-    public class TextTestModel
+    public class TestCategory
     {
         [Key]
         public int Id { get; set; }
 
         [Required, MinLength(3)]
-        public string Text { get; set; }
+        public string Name { get; set; }
     }
 }

@@ -26,10 +26,11 @@ namespace Miniproj.Models
         {
         }
 
-        public DbSet<WordImageTestModel> WordImagetests { get; set; }
-        public DbSet<SeparatorTestModel> Separatortests { get; set; }
-        public DbSet<ColorTestModel> Colortests { get; set; }
-        public DbSet<TextTestModel> Texttests { get; set; }
+        public DbSet<WordImageTest> WordImagetests { get; set; }
+        public DbSet<SeparatorTest> Separatortests { get; set; }
+        public DbSet<ColorTest>     Colortests     { get; set; }
+        public DbSet<SentenceTest>  Sentencetests  { get; set; }
+
         // public DbSet<HighscoreListModel> Highscores { get; set; }
         
         public static ApplicationDbContext Create()

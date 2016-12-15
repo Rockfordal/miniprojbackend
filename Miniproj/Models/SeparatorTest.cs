@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Miniproj.Models
 {
-    public class SeparatorTestModel
+    public class SeparatorTest
     {
         [Key]
         public int Id { get; set; }
