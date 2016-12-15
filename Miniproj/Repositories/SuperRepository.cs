@@ -16,6 +16,8 @@ namespace Miniproj.Repositories
             context = new ApplicationDbContext();
         }
 
+        #region WordImageTest-funktionalitet
+
         public IEnumerable<WordImageQuestion> GetWordImageTestData(int limit = 5)
         {
             var data = context.WordImagetests
@@ -24,11 +26,29 @@ namespace Miniproj.Repositories
             return data;
         }
 
-        /* public static Tuple<int, string> GetRandomWordImageTestData()
+        public ICollection<Boolean> SubmitWordImageTest(ICollection<WordImageAnswer> attempts)
         {
-            var obj = HelperMethods.GetRandom(context.WordImageTestModels);
-            return new Tuple<int, string>(obj.Id, obj.Image);
-        } */
+            List<int> idList = attempts
+                .Select(a => a.Id)
+                    .ToList();
+
+            var answers = context.WordImagetests
+                .Where(wi => idList.Contains(wi.Id))
+                .Select(wi => wi.Word.ToLower())
+                .ToList();
+
+            var results = new List<Boolean>();
+
+            foreach (WordImageAnswer attempt in attempts)
+            {
+                var result = answers.Contains(attempt.Word.ToLower());
+                results.Add(result);
+            }
+
+            return results;
+        }
+
+        #endregion
 
         #region SeparatorTest-funktionalitet
 
