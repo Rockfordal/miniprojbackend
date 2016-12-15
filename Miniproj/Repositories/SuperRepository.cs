@@ -71,24 +71,22 @@ namespace Miniproj.Repositories
             return test.Replace(input, replacement);
         }
 
-        public List<bool> VerifySeparators(string input, string expected)
+        public ICollection<Boolean> SubmitSeparatorTest(ICollection<string> attempts)
         {
-            var correct = new List<bool>(); ;
+            var correct = new List<bool>();
 
-            //Regex test = new Regex("[^" + HelperClasses.Separators + "]");
-            //test.Replace(input, "");
+            /* Fixa i morrn
+            // Tar bort alla icke-skiljetecken från expected
+            Regex rgx = new Regex("[^" + HelperClasses.Separators + "]");
+            rgx.Replace(expected, "");
 
-            for (int i = 0; i < Math.Min(input.Length, expected.Length); i++)
+            for (int i = 0; i < Math.Max(input.Length, expected.Length); i++)
             {
-                if (input[i] == expected[i])
-                {
-                    correct.Add(true);
-                }
-                else
-                {
-                    correct.Add(false);
-                }
+                char c1 = (i < input.Length) ? input[i] : 'a';
+                char c2 = (i < expected.Length) ? expected[i] : 'b';
+                correct.Add(c1 == c2);
             }
+            */
 
             return correct;
         }
