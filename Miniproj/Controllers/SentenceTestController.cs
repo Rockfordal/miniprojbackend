@@ -14,7 +14,7 @@ namespace Miniproj.Controllers
     {
         public SuperRepository repo { get; set; }
 
-        public SentenceTestController ()
+        public SentenceTestController()
         {
             repo = new SuperRepository();
         }

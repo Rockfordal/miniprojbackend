@@ -30,6 +30,8 @@ namespace Miniproj.Repositories
             return new Tuple<int, string>(obj.Id, obj.Image);
         } */
 
+        #region SeparatorTest-funktionalitet
+
         public SeparatorTest GetRandomSeparatorTestData()
         {
             Random rand = new Random();
@@ -42,6 +44,38 @@ namespace Miniproj.Repositories
                 .First();
             return data;
         }
+
+        public string HideSeparators(string input, string replacement = "*")
+        {
+            Regex test = new Regex("[" + HelperClasses.Separators + "]");
+            return test.Replace(input, replacement);
+        }
+
+        public List<bool> VerifySeparators(string input, string expected)
+        {
+            var correct = new List<bool>(); ;
+
+            //Regex test = new Regex("[^" + HelperClasses.Separators + "]");
+            //test.Replace(input, "");
+
+            for (int i = 0; i < Math.Min(input.Length, expected.Length); i++)
+            {
+                if (input[i] == expected[i])
+                {
+                    correct.Add(true);
+                }
+                else
+                {
+                    correct.Add(false);
+                }
+            }
+
+            return correct;
+        }
+
+        #endregion
+
+        #region SentenceTest-funktionalitet
 
         public SentenceTest GetRandomSentenceTestData()
         {
@@ -56,12 +90,6 @@ namespace Miniproj.Repositories
             return data;
         }
 
-        public string HideSeparators(string input, string replacement = "*")
-        {
-            Regex test = new Regex("[" + HelperClasses.Separators +"]");
-            return test.Replace(input, replacement);
-        }
-
         public string[] ShuffleText(string text)
         {
             string[] temp = text.Split(' ');
@@ -72,5 +100,7 @@ namespace Miniproj.Repositories
 
             return temp;
         }
+
+        #endregion
     }
 }
