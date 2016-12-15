@@ -54,5 +54,28 @@ namespace Miniproj.Repositories
                 .First();
             return data;
         }
+
+        public ICollection<Boolean> SubmitWordImageTest(ICollection<WordImageAnswer> attempts)
+        {
+            List<int> idList = attempts
+                .Select(a => a.Id)
+                    .ToList();
+
+            var answers = context.WordImagetests
+                .Where(wi => idList.Contains(wi.Id))
+                .Select(wi => wi.Word.ToLower())
+                .ToList();
+
+            var results = new List<Boolean>();
+
+            foreach (WordImageAnswer attempt in attempts)
+            {
+                var result = answers.Contains(attempt.Word.ToLower());
+                results.Add(result);
+            }
+                
+            return results;
+        }
+
     }
 }

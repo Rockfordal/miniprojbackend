@@ -22,12 +22,29 @@ namespace Miniproj.Controllers
             repo = new SuperRepository();
         }
 
-        // GET: api/WordImageTest
+        // GET: api/wordimagetest
         public ICollection<WordImageQuestion> Get()
         {
             List<WordImageQuestion> wordimages = repo.GetWordImageTestData().ToList();
 
             return wordimages;
+        }
+
+        // POST: api/wordimagetest
+        [ResponseType(typeof(ICollection<bool>))]
+        public IHttpActionResult Post(ICollection<WordImageAnswer> attempts)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            List<Boolean> response =
+                repo
+                    .SubmitWordImageTest(attempts)
+                    .ToList();
+
+            return Ok(response);
         }
 
     }
