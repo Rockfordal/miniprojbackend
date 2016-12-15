@@ -209,6 +209,7 @@
     <Compile Include="Classes\HighscoreList.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RandomTestController.cs" />
     <Compile Include="Controllers\SentenceTestController.cs" />
     <Compile Include="Controllers\SeparatorTestController.cs" />
     <Compile Include="Controllers\WordImageTestController.cs" />

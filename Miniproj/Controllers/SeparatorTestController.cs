@@ -29,6 +29,5 @@ namespace Miniproj.Controllers
 
             return Ok(text);
         }
-
     }
 }

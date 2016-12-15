@@ -58,11 +58,11 @@ namespace Miniproj.Repositories
 
         public string HideSeparators(string input, string replacement = "*")
         {
-            Regex test = new Regex("[" + HelperClasses.SeparatorList +"]");
+            Regex test = new Regex("[" + HelperClasses.Separators +"]");
             return test.Replace(input, replacement);
         }
 
-        public string[] ScrambleText(string text)
+        public string[] ShuffleText(string text)
         {
             string[] temp = text.Split(' ');
 
