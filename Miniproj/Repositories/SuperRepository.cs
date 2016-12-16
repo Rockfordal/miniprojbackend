@@ -51,12 +51,11 @@ namespace Miniproj.Repositories
             var data = context.Sentencetests
                 .OrderBy(a => a.Id)
                 .Skip(toSkip)
-                .Take(1)
                 .First();
             return data;
         }
 
-        public ICollection<Boolean> SubmitWordImageTest(ICollection<WordImageAnswer> attempts)
+        public List<WordImageResponse> SubmitWordImageTest(ICollection<WordImageAnswer> attempts)
         {
             List<int> idList = attempts
                 .Select(a => a.Id)
@@ -67,12 +66,22 @@ namespace Miniproj.Repositories
                 .Select(wi => wi.Word.ToLower())
                 .ToList();
 
-            var results = new List<Boolean>();
+            var realanswers = context.WordImagetests
+                .Where(wi => idList.Contains(wi.Id))
+                .ToList();
+
+            var results = new List<WordImageResponse>();
 
             foreach (WordImageAnswer attempt in attempts)
             {
+                string data = "0";
                 var result = answers.Contains(attempt.Word.ToLower());
-                results.Add(result);
+                if (result)
+                {
+                    data = "1";
+                } 
+                var res = new WordImageResponse { Result = data };
+                results.Add(res);
             }
                 
             return results;
