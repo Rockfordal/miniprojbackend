@@ -26,7 +26,7 @@ namespace Miniproj.Repositories
             return data;
         }
 
-         public List<WordImageResponse> SubmitWordImageTest(ICollection<WordImageAnswer> attempts)
+        public List<WordImageResponse> SubmitWordImageTest(ICollection<WordImageAnswer> attempts)
         {
             List<int> idList = attempts
                 .Select(a => a.Id)
@@ -52,6 +52,64 @@ namespace Miniproj.Repositories
                     data = "1";
                 } 
                 var res = new WordImageResponse { Result = data };
+                results.Add(res);
+            }
+                
+            return results;
+        }
+
+        #endregion
+
+        #region ColorTest-funktionalitet
+
+        public ColorTestQuestion GetcolorTestData(int limit = 5)
+        {
+            List<ColorTestAnswer> colors = context.Colortests
+                .Select(c => new ColorTestAnswer { Id = c.Id, Hex = c.RGB })
+                .Take(limit)
+                .ToList();
+
+            Random rand = new Random();
+            var count = context.Separatortests.Count();
+            int toSkip = rand.Next(0, count);
+
+            ColorTestQuestion color = context.Colortests
+                .OrderBy(a => a.Id)
+                .Skip(toSkip)
+                .Select(c => new ColorTestQuestion { Id = c.Id, Name = c.Name })
+                .First();
+
+            color.Colors = colors;
+
+            return color;
+        }
+
+        public List<ColorTestResponse> SubmitColorTest(ICollection<ColorTestAnswer> attempts)
+        {
+            List<int> idList = attempts
+                .Select(a => a.Id)
+                .ToList();
+
+            var answers = context.Colortests
+                .Where(wi => idList.Contains(wi.Id))
+                .Select(wi => wi.RGB.ToLower())
+                .ToList();
+
+            var realanswers = context.Colortests
+                .Where(wi => idList.Contains(wi.Id))
+                .ToList();
+
+            var results = new List<ColorTestResponse>();
+
+            foreach (ColorTestAnswer attempt in attempts)
+            {
+                string data = "0";
+                var result = answers.Contains(attempt.Hex);
+                if (result)
+                {
+                    data = "1";
+                } 
+                var res = new ColorTestResponse { Result = data };
                 results.Add(res);
             }
                 
