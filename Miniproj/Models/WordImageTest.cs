@@ -30,4 +30,10 @@ namespace Miniproj.Models
         public string Word { get; set; }
     }
 
+    public class WordImageResponse
+    {
+        //public int Id { get; set; }
+        public string Result { get; set; }
+    }
+
 }
