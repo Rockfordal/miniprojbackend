@@ -17,8 +17,8 @@ namespace Miniproj.Controllers
         {
             Random rand = new Random();
             //ApiController con = Activator.CreateInstance(controllerTypes[rand.Next(controllerTypes.Length)]) as ApiController;
-            Uri con = new Uri(controllerUrls[rand.Next(controllerUrls.Length)], UriKind.Relative);
-            return Redirect(con);
+            Uri controller = new Uri(controllerUrls[rand.Next(controllerUrls.Length)], UriKind.Relative);
+            return Redirect(controller);
         }
     }
 }

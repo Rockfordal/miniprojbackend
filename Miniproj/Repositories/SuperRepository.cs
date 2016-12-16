@@ -26,7 +26,7 @@ namespace Miniproj.Repositories
             return data;
         }
 
-         public List<WordImageResponse> SubmitWordImageTest(ICollection<WordImageAnswer> attempts)
+        public List<WordImageResponse> SubmitWordImageTest(ICollection<WordImageAnswer> attempts)
         {
             List<int> idList = attempts
                 .Select(a => a.Id)

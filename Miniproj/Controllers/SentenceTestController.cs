@@ -19,15 +19,15 @@ namespace Miniproj.Controllers
             repo = new SuperRepository();
         }
 
-        // GET: /api/separatortest/
+        // GET: /api/sentencetest/
         [ResponseType(typeof(SentenceTest))]
         public IHttpActionResult Get()
         {
             SentenceTest text = repo.GetRandomSentenceTestData();
 
-            string output = string.Join(" ", repo.ShuffleText(text.Text));
+            text.Text = string.Join(" ", repo.ShuffleText(text.Text));
 
-            return Ok(output);
+            return Ok(text);
         }
     }
 }
