@@ -17,4 +17,22 @@ namespace Miniproj.Models
         [Required]
         public string Name { get; set; }
     }
+
+    public class ColorTestQuestion
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public ICollection<ColorTestAnswer> Colors { get; set; }
+    }
+
+    public class ColorTestAnswer
+    {
+        public int Id { get; set; }
+        public string Hex { get; set; }
+    }
+
+    public class ColorTestResponse
+    {
+        public string Result { get; set; }
+    }
 }
