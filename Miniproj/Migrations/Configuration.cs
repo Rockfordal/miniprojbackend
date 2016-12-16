@@ -35,13 +35,6 @@ namespace Miniproj.Migrations
                 new SeparatorTest { Text = "Den bästa hämnden när någon stjäl din fru? Att låta honom behålla henne." }
             );
 
-            c.Sentencetests.AddOrUpdate(
-                new SentenceTest { Text = "Detta är bara ett exempel" },
-                new SentenceTest { Text = "Fem ord säger så lite" },
-                new SentenceTest { Text = "Meningar inleds med stor bokstav" },
-                new SentenceTest { Text = "Det står stilla just nu" }
-            );
-
             c.WordImagetests.AddOrUpdate(
                 new WordImageTest { Image = "/content/images/bird.png", Word = "Fågel" },
                 new WordImageTest { Image = "/content/images/car.png", Word = "Bil" },
@@ -82,7 +75,7 @@ namespace Miniproj.Migrations
                 new ColorTest { Name = "Lila", RGB = "#C8A2C8" },
                 new ColorTest { Name = "Violett", RGB = "#EE82EE" },
                 new ColorTest { Name = "Purpur", RGB = "#800080" }
-                );
+            );
         }
     }
 }

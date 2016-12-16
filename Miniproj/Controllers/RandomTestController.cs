@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Description;
 
 namespace Miniproj.Controllers
 {
@@ -15,7 +16,7 @@ namespace Miniproj.Controllers
         {
             Random rand = new Random();
             ApiController con = Activator.CreateInstance(controllerTypes[rand.Next(0, controllerTypes.Length - 1)]) as ApiController;
-            return Ok(con);
+            return Ok(con.ToString());
         }
     }
 }
