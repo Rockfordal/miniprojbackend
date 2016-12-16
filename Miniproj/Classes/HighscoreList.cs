@@ -8,7 +8,7 @@ namespace Miniproj.Classes
     public class HighscoreList
     {
         private int Capacity;
-        public List<HighscoreEntry> Highscores { get; set; }
+        private List<HighscoreEntry> Highscores { get; set; }
 
         public HighscoreList(int capacity = 10)
         {
@@ -29,6 +29,26 @@ namespace Miniproj.Classes
             }
 
             Highscores = entries;
+        }
+
+        public int InsertEntryIfValid(HighscoreEntry entry)
+        {
+            if (entry.Score < Highscores[Capacity - 1].Score)
+            {
+                return -1;
+            }
+
+            for (int i = 0; i < Capacity; i++)
+            {
+                if (entry.Score >= Highscores[i].Score)
+                {
+                    Highscores.Insert(i, entry);
+                    Highscores.RemoveAt(Capacity);
+                    return i;
+                }
+            }
+
+            throw new Exception("Fel!");
         }
     }
 }

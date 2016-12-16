@@ -23,7 +23,7 @@ namespace Miniproj.Controllers
         [ResponseType(typeof(ColorTestQuestion))]
         public ColorTestQuestion Get()
         {
-            return repo.GetcolorTestData();
+            return repo.GetColorTestData();
         }
 
         // POST: api/colortest

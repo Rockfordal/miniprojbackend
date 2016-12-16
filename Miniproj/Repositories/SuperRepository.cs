@@ -62,7 +62,7 @@ namespace Miniproj.Repositories
 
         #region ColorTest-funktionalitet
 
-        public ColorTestQuestion GetcolorTestData(int limit = 5)
+        public ColorTestQuestion GetColorTestData(int limit = 5)
         {
             List<ColorTestAnswer> colors = context.Colortests
                 .Select(c => new ColorTestAnswer { Id = c.Id, Hex = c.RGB })
