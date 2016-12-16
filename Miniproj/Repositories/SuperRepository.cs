@@ -73,7 +73,7 @@ namespace Miniproj.Repositories
 
         public ICollection<bool> SubmitSeparatorTest(string input, string expected)
         {
-            var correct = new List<bool>();
+            var result = new List<bool>();
 
             // Tar bort alla icke-skiljetecken från expected
             Regex rgx = new Regex("[^" + HelperClasses.Separators + "]");
@@ -83,10 +83,10 @@ namespace Miniproj.Repositories
             {
                 char c1 = (i < input.Length) ? input[i] : 'a';
                 char c2 = (i < expected.Length) ? expected[i] : 'b';
-                correct.Add(c1 == c2);
+                result.Add(c1 == c2);
             }
 
-            return correct;
+            return result;
         }
 
         #endregion

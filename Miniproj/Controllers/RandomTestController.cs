@@ -10,13 +10,15 @@ namespace Miniproj.Controllers
 {
     public class RandomTestController : ApiController
     {
-        static Type[] controllerTypes = { typeof(WordImageTestController), typeof(ColorTestController), typeof(SeparatorTestController), typeof(SentenceTestController) };
+        //static Type[] controllerTypes = { typeof(WordImageTestController), typeof(ColorTestController), typeof(SeparatorTestController), typeof(SentenceTestController) };
+        static string[] controllerUrls = { "WordImageTest", "ColorTest", "SeparatorTest", "SentenceTest" };
 
-        public IHttpActionResult GetRandom()
+        public IHttpActionResult Get()
         {
             Random rand = new Random();
-            ApiController con = Activator.CreateInstance(controllerTypes[rand.Next(0, controllerTypes.Length - 1)]) as ApiController;
-            return Ok(con.ToString());
+            //ApiController con = Activator.CreateInstance(controllerTypes[rand.Next(controllerTypes.Length)]) as ApiController;
+            Uri con = new Uri(controllerUrls[rand.Next(controllerUrls.Length)], UriKind.Relative);
+            return Redirect(con);
         }
     }
 }

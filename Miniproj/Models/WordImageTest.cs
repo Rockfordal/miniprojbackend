@@ -29,5 +29,4 @@ namespace Miniproj.Models
         public int Id { get; set; }
         public string Word { get; set; }
     }
-
 }
