@@ -10,6 +10,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using Miniproj.Models;
 using Miniproj.Repositories;
+using System.Web.Http.Cors;
 
 namespace Miniproj.Controllers
 {
@@ -31,20 +32,23 @@ namespace Miniproj.Controllers
         }
 
         // POST: api/wordimagetest
-        [ResponseType(typeof(ICollection<bool>))]
+        [ResponseType(typeof(ICollection<WordImageAnswer>))]
         public IHttpActionResult Post(ICollection<WordImageAnswer> attempts)
         {
             if (!ModelState.IsValid)
-            {
                 return BadRequest(ModelState);
-            }
 
-            List<Boolean> response =
+            List<WordImageResponse> response =
                 repo
-                    .SubmitWordImageTest(attempts)
-                    .ToList();
+                    .SubmitWordImageTest(attempts);
 
             return Ok(response);
+        }
+
+        // IHttpResponseMessage
+        public IHttpActionResult Options()
+        {
+            return Ok();
         }
 
     }
